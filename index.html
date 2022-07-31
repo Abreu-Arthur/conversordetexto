@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Conversor</title>
+</head>
+<body onload="pre()">
+    <div id="pre">Carregando...</div>
+    <div id="conteudo">
+        <div id="txt">
+            <textarea id="usertxt" placeholder="Digite seu texto aqui" spellcheck="false" autofocus onkeyup="countcarac()"></textarea><br>
+            <div id=box >
+                <div id="carac">0</div>
+                <div id="word">0</div>
+            </div>
+            <button id=limp onclick="limpar()">Clear</button>
+            <div id="oq"></div>
+        </div>
+        <div id="op">
+            <div id="up">
+            <p>UPPERCASE</p>
+            <button id="aply" onclick="up()">Aplicar</button>
+            <button id="open" onclick="what('<p style=text-transform:uppercase;>Com isto, poderemos tranformar todo o seu texto para letras maiúsculas</p>')">↓</button>
+            </div>
+            <div id="low">
+                <p>LOWERCASE</p>
+                <button id="aply" onclick="low()">Aplicar</button>
+                <button id="open"  onclick="what('<p style=text-transform:lowercase;>Com isto, poderemos tranformar todo o seu texto para letras minúsculas</p>')">↓</button>
+            </div>
+            <div id="sublin">
+                <p>UNDERLINE</p>
+                <button id="aply" onclick="sub()">Aplicar</button>
+                <input id=cds type=color onchange=cds() placeholder='Escolha a cor do sublinhado'>
+                <button id="open" onclick="what('<p style=text-decoration:underline>Com isto, você pode escolher em sublinhar seu texto e na cor que desejar</p>')">↓</button>
+            </div>
+            <div id="tachado">
+                <p>LINE-THROUGH</p>
+                <button id="aply" onclick="tachado()">Aplicar</button>
+                <button id="open" onclick="what('Com isto, poderemos tachar seu texto')">↓</button>
+            </div>
+        </div>
+        <div id="op2">    
+            <div id="italico">
+                <p>ITÁLICO</p>
+                <button id="aply" onclick="ritalic()">Remover</button>
+                <button id="aply" onclick="italic()">Aplicar</button>
+                <button id="open" onclick="what('<p style=font-style:italic>Com isto, poderemos deixar seu texto em itálico</p>')">↓</button>
+            </div>
+            <div id="negrito">
+                <p>NEGRITO</p>
+                <button id="aply" onclick="rneg()">Remover</button>
+                <button id="aply" onclick="negrito()">Aplicar</button>
+                <button id="open" onclick="what('<p style=font-weight:bold>Com isto, poderemos deixar seu texto em negrito</p>')">↓</button>
+            </div>
+            <div id="fontsize">
+                <p>Tamanho da fonte</p>
+                <input  id=fs type="number" step="1" min=1 max=10000/>
+                <button id="aply" onclick="fontsize()">Aplicar</button>
+                <button id="open" onclick="what('Com isto, você pode selecionar o tamanho da fonte do seu texto')">↓</button>
+            </div>
+            <div id="Color">
+                <p>Cor da fonte</p>
+                <input  id=color type="color" onchange=colortxt()>
+                <button id="open" onclick="what('Com isto, você pode selecionar a cor da fonte de seu texto')">↓</button>
+            </div>
+        </div>
+        <div id="op3">
+            <div id="Color">
+                <p>Cor de fundo</p>
+                <input  id=cbc type="color" onchange=cbc()>
+                <button id="open" onclick="what('Com isto, você pode escolher qual será a cor de fundo para o seu texto')">↓</button>
+            </div>    
+            <div id="mirror">
+                <p>Espelho</p>
+                <button id="aply" onclick="zdeg()">Remover</button>
+                <button id="aply" onclick="mirror()">Aplicar</button>
+                <button id="open" onclick="what('Com isto, você pode rotacionar seu texto em 180° no eixo Y')">↓</button>
+            </div>
+            <div id="reverse">
+                <p>Reverso</p>
+                <button id="aply" onclick="reverso()">Aplicar</button>
+                <button id="open" onclick="what('Com isto, você pode reverter a ordem de seu texto')">↓</button>
+            </div>
+            <div id="space">
+                <p>Espaçamento entre letras e palavras</p>
+                <input id="ls" type="number" onchange="ls()" placeholder="letras">
+                <input id="lw" type="number" onchange="lw()" placeholder="palavras">
+                <button id="open" onclick="what('Com isto, você decide o tamanho do espaçamento entre as letras e/ou palavras')">↓</button>
+            </div>
+        </div>
+    </div>
+    <script src=scripts.js></script>
+</body>
+</html>
